@@ -11,9 +11,10 @@
     "format": "tslint --fix '{src,test}/**/*.ts'",
     "test": "mocha --require ts-node/register 'test/**/*.test.ts'",
     "build": "tsc",
-    "build:graph": "mmdc -i ./graphs/process_flow.mmd -o ./graphs/process_flow.png",
-    "pre-commit": "run-s lint test build:graph",
-    "pre-release": "run-s clean build"
+    "build-graph": "mmdc -i ./graphs/process_flow.mmd -o ./graphs/process_flow.png",
+    "pre-commit": "run-s lint test build-graph",
+    "pre-release": "run-s clean build",
+    "ci": "run-s lint test"
   },
   "dependencies": {
     "@line/bot-sdk": ">=6",
