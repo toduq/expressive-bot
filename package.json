@@ -1,0 +1,32 @@
+{
+  "name": "expressive-bot",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "watch": "tsc -w",
+    "clean": "rm -rf ./dist",
+    "lint": "tsc --noEmit && tslint 'src/**/*.ts'",
+    "format": "tslint --fix 'src/**/*.ts'",
+    "build": "tsc",
+    "build:graph": "mmdc -i ./graphs/process_flow.mmd -o ./graphs/process_flow.png"
+  },
+  "dependencies": {
+    "@line/bot-sdk": ">=6",
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/debug": "^4.1.5",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mermaid.cli": "^0.5.1",
+    "mocha": "^6.2.0",
+    "prettier": "^1.18.2",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.5.3"
+  }
+}

@@ -1,0 +1,18 @@
+---
+extends:
+  - tslint:recommended
+  - tslint-config-prettier
+rulesDirectory:
+  - tslint-plugin-prettier
+rules:
+  no-console: false
+  object-literal-sort-keys: false
+  interface-name: false
+  max-classes-per-file: false
+  prettier:
+    - true
+    - tabWidth: 2
+      singleQuote: true
+      trailingComma: es5
+      semi: false
+      parser: typescript

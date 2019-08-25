@@ -1,0 +1,22 @@
+graph TD
+
+RM[Receive Message] --> IS[Initialize Session]
+IS --> |other message| NTMH[Non text message handler]
+NTMH --> SS
+NTMH --> |fallback| HS
+IS --> |text message| HS[Has current skill?]
+HS --> |no| NLU[Detect Intent by NLU]
+NLU --> |rejected| AA[Ask Again]
+AA --> SS
+NLU --> |accepted| SDA
+
+HS --> |yes| EA[Execute action's AFTER]
+EA --> |ask again| AA
+EA --> |change skill| SDA
+EA --> |continue| ENA
+EA --> |finish| RS[Reset session]
+RS --> SS
+
+SDA[Start default action] --> ENA
+ENA[Execute action's BEFORE]
+ENA --> SS[Save Session]
